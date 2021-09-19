@@ -83,4 +83,4 @@ $ npm run test:cov
 
 ### API Documentation + Test Endpoints
 
-[Swagger API](https://tappd.herokuapp.com/api/)
+[Swagger API](https://tappd-be.herokuapp.com/api)
