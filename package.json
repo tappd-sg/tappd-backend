@@ -1,5 +1,5 @@
 {
-  "name": "tappd",
+  "name": "tappd-backend",
   "version": "0.0.1",
   "description": "Backend server for Tappd",
   "author": "Tappd",
@@ -27,6 +27,7 @@
     "@nestjs/core": "^8.0.6",
     "@nestjs/platform-express": "^8.0.6",
     "@nestjs/swagger": "^5.0.9",
+    "class-validator": "^0.13.1",
     "joi": "^17.4.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
