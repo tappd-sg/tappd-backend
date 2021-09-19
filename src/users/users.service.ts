@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { randomBytes } from 'crypto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -46,11 +46,18 @@ export class UsersService {
   }
 
   findOne(id: string) {
-    return MOCK_USERS.find(({ _id }) => _id === id);
+    const user = MOCK_USERS.find(({ _id }) => _id === id);
+    if (!user) {
+      throw new BadRequestException(`User ${id} does not exist`);
+    }
+    return user;
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
     const userIdx = MOCK_USERS.findIndex(({ _id }) => _id === id);
+    if (userIdx === -1) {
+      throw new BadRequestException(`User ${id} does not exist`);
+    }
     const user = MOCK_USERS.splice(userIdx, 1)[0];
     const { email, name, password } = updateUserDto;
     const updatedUser = { ...user, email, name, password };
@@ -60,6 +67,9 @@ export class UsersService {
 
   remove(id: string) {
     const userIdx = MOCK_USERS.findIndex(({ _id }) => _id === id);
+    if (userIdx === -1) {
+      throw new BadRequestException(`User ${id} does not exist`);
+    }
     const user = MOCK_USERS.splice(userIdx, 1)[0];
     return user;
   }
