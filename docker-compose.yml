@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      context: .
+
+    image: tappd-backend:latest
+
+    env_file:
+      - config/config.env
+
+    ports:
+      - '5100:5100'
