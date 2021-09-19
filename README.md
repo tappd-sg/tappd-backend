@@ -3,6 +3,10 @@
  <h2 align="center">Tappd Backend</h2>
  <p align="center">Backend Server in NestJS for Tappd.</p>
 </p>
+<p align="center">
+    <img alt="Build" src="https://github.com/tappd-sg/tappd-backend/actions/workflows/build.yaml/badge.svg" />
+    <img alt="CodeQL" src="https://github.com/tappd-sg/tappd-backend/actions/workflows/codeql-analysis.yml/badge.svg" />
+</p>
 
 ## Quick Start
 
